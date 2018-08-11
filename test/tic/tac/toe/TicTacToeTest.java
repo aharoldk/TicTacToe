@@ -6,9 +6,7 @@
 package tic.tac.toe;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -16,14 +14,14 @@ import static org.junit.Assert.*;
  *
  * @author 18055842
  */
-public class TicTacToePresenterTest {
+public class TicTacToeTest {
     
     private TicTacToe view;
     private TicTacToePresenter instance;
     private final String[] inputs = new String[5];
     private final String[] winningList = new String[8];
         
-    public TicTacToePresenterTest() {
+    public TicTacToeTest() {
     }
     
     @Before
@@ -74,5 +72,12 @@ public class TicTacToePresenterTest {
         assertEquals("Not Same Result : ", "O Wins", instance.getResult(false, true, 0));
         assertEquals("Not Same Result : ", "Game still in progress", instance.getResult(false, false, 4));
         assertEquals("Not Same Result : ", "Its a draw!", instance.getResult(false, false, 0));
+    }
+    
+    @Test
+    public void testCheckTicTacToeWinner(){
+        for(String input : inputs){
+            instance.setListTicTacToe(input);
+        }
     }
 }

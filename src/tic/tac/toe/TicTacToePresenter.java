@@ -65,7 +65,10 @@ public class TicTacToePresenter {
         return true;
     }
     
-    private void checkTicTacToeWinner(String listTicTacToe1){
+    public void checkTicTacToeWinner(String listTicTacToe1){
+        xWin = false;
+        oWin = false;
+        
         for (String winningList1 : winningList) {
             String strike = getStrikeCondition(winningList1, listTicTacToe1);
             
